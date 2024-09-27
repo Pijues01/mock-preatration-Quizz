@@ -7,6 +7,8 @@ use App\Models\CreateExam;
 use App\Models\Question;
 use App\Models\Useranswer;
 use App\Models\Userquestion;
+use App\Models\Subjectmodel;
+use App\Models\Examcatmodel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -81,7 +83,9 @@ class Userregister extends Controller
             $examdetails = CreateExam::where('public', '1')->where('active', '1')->where('end_date_time', '>', date('Y-m-d H:i:s'))->get();
             $userdetails = Userinfo::where('id', $eid)->get();
             // dd($userdetails);
-            return View('user.home1', compact('examdetails', 'userdetails'));
+            $subject = Subjectmodel::get();
+            // dd($subject);
+            return View('user.home1', compact('examdetails', 'userdetails','subject'));
         } else {
             return redirect(url('/'));
         }

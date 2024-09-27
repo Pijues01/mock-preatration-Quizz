@@ -159,7 +159,7 @@
     </footer>
 </div>
 <!-- Footer section end -->
- 
+
 <!-- Bootstrap core JavaScript-->
 <script src="{{ url('/') }}/vendor/jquery/jquery.min.js"></script>
 <script src="{{ url('/') }}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -176,3 +176,13 @@
 <!-- Page level custom scripts -->
 <script src="{{ url('/') }}/js/demo/chart-area-demo.js"></script>
 <script src="{{ url('/') }}/js/demo/chart-pie-demo.js"></script>
+
+<script>
+    document.querySelectorAll('.nav-link').forEach(item => {
+    item.addEventListener('click', function(event) {
+        let sub_id = this.querySelector('input[type="hidden"]').value;
+        alert('Subject ID: ' + sub_id);
+    });
+});
+
+</script>

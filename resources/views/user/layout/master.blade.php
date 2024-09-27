@@ -26,6 +26,7 @@
             margin: 28px;
         }
     </style>
+    
 
 </head>
 
@@ -33,7 +34,9 @@
     <div id="wrapper">
         @include('user.layout.sidebar')
         @include('user.layout.topbar')
+        @include('user.layout.banner')
         @yield('content')
+        @include('user.layout.contact-us')
         @include('user.layout.footer')
 
 </body>
